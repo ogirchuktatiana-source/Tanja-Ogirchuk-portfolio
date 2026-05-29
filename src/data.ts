@@ -95,7 +95,11 @@ export const PROJECTS_DATA: Project[] = [
     id: 'cloud-admin',
     title: 'DocServer Admin Panel',
     role: 'Senior Product Designer',
-    image: '/DocServerAdminPanel/admin_docs_cloud_1779959265791.png',
+    images: [
+      '/DocServerAdminPanel/Statistics.png',
+      '/DocServerAdminPanel/JWT_Settings.png',
+      '/DocServerAdminPanel/IP_Filtering.png'
+    ],
     impact: 'Designed the SaaS administrative panel from scratch to help enterprise clients easily manage self-hosted collaboration servers. Focused on data visualization to build clear dashboards for tracking real-time server metrics and capacity limits.',
     tags: ['SaaS Design', 'Figma Variables', 'Dashboard Design', 'Data Visualization', 'Security UX']
   },
@@ -103,7 +107,9 @@ export const PROJECTS_DATA: Project[] = [
     id: 'admin-docs-cloud',
     title: 'Admin DocsCloud',
     role: 'Senior Product Designer',
-    image: '/admin_docs_cloud_1779959265791.png',
+    images: [
+      '/admin_docs_cloud/admin_docs_cloud_1779959265791.png',
+    ] ,
     impact: 'Engineered multi-tenant administration workflows and document libraries, bringing advanced search patterns, file collaboration permissions, and live diagnostic monitoring to cloud deployments.',
     tags: ['Cloud Administration', 'Multi-tenant Permissions', 'Document Orchestration', 'SaaS Architecture']
   },
@@ -111,6 +117,9 @@ export const PROJECTS_DATA: Project[] = [
     id: 'design-system',
     title: 'API Documentation',
     role: 'Senior UX/UI Designer',
+    images: [
+      '/API_Documentation/design_system_74208224.png',
+    ] ,
     image: '/design_system_74208224.png',
     impact: 'Created a component library based on Figma’s Variables and design tokens for Storybook integration.',
     tags: ['Variables & Tokens', 'Storybook', 'Figma Design System', 'API Documentation', 'Technical Alignment']
@@ -119,7 +128,9 @@ export const PROJECTS_DATA: Project[] = [
     id: 'integration-edition',
     title: 'Integration Edition',
     role: 'Senior UX/UI Designer',
-    image: '/help_center_74228492.png', 
+    images: [
+      '/integration_edition/integration-edition.png',
+    ] , 
     impact: 'Designed the integration framework to seamlessly embed collaborative editors into third-party SaaS ecosystems, streamlining API configurations and developer hand-off guides.',
     tags: ['Integration API', 'Iframe Mechanics', 'Developer UX', 'Configuration Flow']
   },
@@ -127,6 +138,9 @@ export const PROJECTS_DATA: Project[] = [
     id: 'landing-pages',
     title: 'Landing Pages',
     role: 'Senior Visual Designer',
+    images: [
+      '/landing_pages/landing-pages.png',
+    ] , 
     image: '/landing_page_82519600.png',
     impact: 'Crafted high-converting, premium marketing landing pages for global enterprise products. Leveraged strict grid alignments, compelling typography pairings, and micro-interactions.',
     tags: ['Landing Pages', 'Conversion Rate', 'Responsive Layouts', 'SEO Optimization']
@@ -135,7 +149,9 @@ export const PROJECTS_DATA: Project[] = [
     id: 'presentations',
     title: 'Presentations',
     role: 'Design Lead',
-    image: '/presentations_2539674.png',
+    images: [
+      '/presentations/presentations_1779882539674.png',
+    ] , 
     impact: 'Designed clean, high-impact corporate presentations and sales slide decks for key stakeholding panels. Focused on clear visual hierarchy, storytelling, and elegant data representation.',
     tags: ['Corporate Deck', 'Storytelling', 'Data Representation', 'Typography']
   },
@@ -143,7 +159,9 @@ export const PROJECTS_DATA: Project[] = [
     id: 'marketplace',
     title: 'Marketplace',
     role: 'Lead Product Designer',
-    image: '/marketplace_82558247.png',
+    images: [
+      '/marketplace/marketplace.png',
+    ] , 
     impact: 'Designed a robust, scalable cloud application and plugin marketplace interface, connecting enterprise solutions with modular extensions and single-click installer widgets.',
     tags: ['E-commerce', 'SaaS Directory', 'Search Navigation', 'Grid Layouts']
   },
@@ -151,7 +169,9 @@ export const PROJECTS_DATA: Project[] = [
     id: 'illustrations',
     title: 'Illustrations',
     role: 'Graphic & Brand Illustrator',
-    image: '/illustrations_12579256.png',
+    images: [
+      '/illustrations/illustrations.png',
+    ] , 
     impact: 'Crafted a versatile vector illustration style guide, developing branded key visuals, custom isometric scenes, and unique character design libraries used across branding assets.',
     tags: ['Vector Graphics', 'Branding Guide', 'Flat Illustration', 'Isometric Assets']
   },
@@ -159,7 +179,9 @@ export const PROJECTS_DATA: Project[] = [
     id: 'logos',
     title: 'Logos',
     role: 'Brand Identity Designer',
-    image: '/logos_1779882598315.png',
+    images: [
+      '/logos/logos.png',
+    ] , 
     impact: 'Created iconic, timeless corporate identity solutions and clever negative-space logo grid constructions for dynamic tech startups and established agencies alike.',
     tags: ['Branding Systems', 'Logo Design', 'Aesthetic Grid', 'Symbol Construction']
   }

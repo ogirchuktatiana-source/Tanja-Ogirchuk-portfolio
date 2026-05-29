@@ -20,6 +20,7 @@ export interface Project {
   title: string;
   role: string;
   image?: string;
+  images: string[];
   impact: string;
   tags: string[];
   metrics?: string;
