@@ -1,0 +1,6 @@
+{
+  "name": "Tatiana Ogirchuk Portfolio",
+  "description": "Minimalist, high-contrast digital portfolio for Tatiana Ogirchuk, Senior Product Designer based in Munich.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
