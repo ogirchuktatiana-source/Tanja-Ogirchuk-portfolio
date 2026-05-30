@@ -50,3 +50,4 @@ export interface Recommendation {
   tags: string[];
   linkedin?: string;
 }
+

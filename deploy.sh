@@ -1,28 +1,28 @@
 #!/bin/bash
 
-# 1. Принудительно останавливаем скрипт при любой ошибке
+#1. Force the script to stop on any error.
 set -e
 
-echo "🚀 Начинаем полную автоматизацию деплоя..."
+echo "🚀 I am starting full automation of deployment..."
 
-# 2. Собираем все измененные файлы и новые картинки
-echo "📦 Индексация файлов и создание коммита..."
+# 2. We collect all modified files and new images
+echo "📦 Indexing files and creating a commit"
 git add .
 
-# Автоматически создаем коммит с текущей датой и временем, чтобы не вводить текст вручную
+# Automatically create a commit with the current date and time so you don't have to enter the text manually.
 COMMIT_MSG="Update portfolio layout - $(date +'%Y-%m-%d %H:%M:%S')"
 git commit -m "$COMMIT_MSG"
 
-# 3. Отправляем исходный код в основную ветку на GitHub
-echo "📤 Пушим исходный код в ветку main..."
+# 3. Pushing the source code to the main branch on GitHub
+echo " Push the source code to the main branch"
 git push origin main --force
 
-# 4. Собираем проект (компиляция в HTML/CSS/JS)
-echo "🛠️ Запуск компиляции проекта..."
+# 4. Building the project (compiling to HTML/CSS/JS)
+echo "Starting project compilation"
 npm run build
 
-# 5. Публикуем готовую сборку на GitHub Pages
-echo "🌐 Публикация на GitHub Pages..."
+# 5. I`m publishing the finished build on GitHub Pages
+echo "Publishing to GitHub Pages"
 npm run deploy
 
-echo "🎉 Всё готово! Сайт успешно обновлен и отправлен на GitHub."
+echo "🎉 The site has been successfully updated and sent to GitHub."
