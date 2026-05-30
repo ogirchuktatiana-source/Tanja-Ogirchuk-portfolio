@@ -4,14 +4,15 @@
  */
 
 import { useState } from 'react';
-import { Briefcase, GraduationCap, RefreshCw, Calendar, ChevronDown, ChevronUp, Layers, ListFilter } from 'lucide-react';
+import { Briefcase, GraduationCap, Calendar, ChevronDown, ChevronUp, Layers, ListFilter } from 'lucide-react';
 import { TIMELINE_DATA } from '../data';
 import { TimelineItem } from '../types';
 
 export default function Roadmap() {
   const [filter, setFilter] = useState<'all' | 'experience' | 'academic'>('all');
-  const [sortOrder, setSortOrder] = useState<'chrono' | 'reverse'>('chrono');
+  const [sortOrder, setSortOrder] = useState<'chrono' | 'reverse'>('reverse');
   const [expandedId, setExpandedId] = useState<string | null>('leader'); // Default leader node open
+  const [ascensioExpanded, setAscensioExpanded] = useState<boolean>(true);
 
   // Filter items
   const filteredTimeline = TIMELINE_DATA.filter(item => {
@@ -56,6 +57,35 @@ export default function Roadmap() {
               <p className="text-sm text-text-secondary mt-2 font-sans">
                 Interactively explore the structural timeline bridging systems logic, graphic foundations, and modern SaaS leadership.
               </p>
+            </div>
+
+            {/* Ordering Selector */}
+            <div className="space-y-3 pt-4 border-t border-custom-border">
+              <span className="font-mono text-[10px] text-text-super uppercase tracking-wider block">
+                Roadmap Sequence
+              </span>
+              <div className="grid grid-cols-2 gap-1 p-0.5 bg-page-bg rounded border border-custom-border">
+                <button
+                  onClick={() => setSortOrder('chrono')}
+                  className={`py-1.5 text-[11px] rounded transition-all font-mono font-medium cursor-pointer ${
+                    sortOrder === 'chrono' 
+                      ? 'bg-card-bg text-text-main shadow-sm font-bold' 
+                      : 'text-text-secondary hover:text-text-main'
+                  }`}
+                >
+                  Past &rarr; Present
+                </button>
+                <button
+                  onClick={() => setSortOrder('reverse')}
+                  className={`py-1.5 text-[11px] rounded transition-all font-mono font-medium cursor-pointer ${
+                    sortOrder === 'reverse' 
+                      ? 'bg-card-bg text-text-main shadow-sm font-bold' 
+                      : 'text-text-secondary hover:text-text-main'
+                  }`}
+                >
+                  Present &rarr; Past
+                </button>
+              </div>
             </div>
 
             {/* Interactive Timeline Filters */}
@@ -103,148 +133,217 @@ export default function Roadmap() {
                 </button>
               </div>
             </div>
- 
-            {/* Ordering Selector */}
-            <div className="space-y-3 pt-4 border-t border-custom-border">
-              <span className="font-mono text-[10px] text-text-super uppercase tracking-wider block">
-                Roadmap Sequence
-              </span>
-              <div className="grid grid-cols-2 gap-1 p-0.5 bg-page-bg rounded border border-custom-border">
-                <button
-                  onClick={() => setSortOrder('chrono')}
-                  className={`py-1.5 text-[11px] rounded transition-all font-mono font-medium cursor-pointer ${
-                    sortOrder === 'chrono' 
-                      ? 'bg-card-bg text-text-main shadow-sm font-bold' 
-                      : 'text-text-secondary hover:text-text-main'
-                  }`}
-                >
-                  Past &rarr; Present
-                </button>
-                <button
-                  onClick={() => setSortOrder('reverse')}
-                  className={`py-1.5 text-[11px] rounded transition-all font-mono font-medium cursor-pointer ${
-                    sortOrder === 'reverse' 
-                      ? 'bg-card-bg text-text-main shadow-sm font-bold' 
-                      : 'text-text-secondary hover:text-text-main'
-                  }`}
-                >
-                  Present &rarr; Past
-                </button>
-              </div>
-            </div>
 
           </div>
         </div>
 
-        {/* Right column / list containing vertical timeline */}
-        <div className="lg:col-span-9 p-6 md:p-12 relative">
-          
-          {/* Vertical layout line */}
-          <div className="absolute left-[31px] md:left-[59px] top-12 bottom-12 w-[1px] bg-custom-border pointer-events-none"></div>
+        {/* Right column / list containing career cards */}
+        <div className="lg:col-span-9 p-6 md:p-12 relative bg-page-bg">
 
-          <div className="space-y-8 relative">
+          <div className="space-y-6 relative" id="roadmap-stack">
             {sortedTimeline.map((item, index) => {
-              const isExpanded = expandedId === item.id;
-              
-              // Define badge/color based on milestone type
-              const isLead = item.id === 'leader';
-              const isEducation = item.type === 'education';
-              const isPivot = item.type === 'pivot';
-              const isWork = item.type === 'experience';
-              
-              return (
-                <div key={item.id} className="relative flex gap-4 md:gap-10 items-start group select-none">
+              // SIA Ascensio Grouping Logic
+              const isAscensio = item.id === 'leader' || item.id === 'uxui';
+              if (isAscensio) {
+                const shouldRenderCombinedCard = 
+                  (sortOrder === 'reverse' && item.id === 'leader') ||
+                  (sortOrder === 'chrono' && item.id === 'uxui');
                   
-                  {/* Circle Hub node with custom symbol or number */}
-                  <button
-                    onClick={() => toggleExpand(item.id)}
-                    className={`relative z-10 flex-shrink-0 w-8 md:w-10 h-8 md:h-10 rounded-full border flex items-center justify-center transition-all cursor-pointer ${
-                      isExpanded 
-                        ? 'bg-text-main text-page-bg border-custom-border scale-110 shadow-md' 
-                        : isWork
-                        ? 'bg-semantic-work-bg text-semantic-work-text border-semantic-work-text/30 hover:opacity-90'
-                        : 'bg-semantic-study-bg text-semantic-study-text border-semantic-study-text/30 hover:opacity-90'
-                    }`}
+                if (!shouldRenderCombinedCard) {
+                  return null;
+                }
+
+                // Retrieve BOTH roles verbatim from original TIMELINE_DATA to guarantee matching
+                const leaderItem = TIMELINE_DATA.find(x => x.id === 'leader')!;
+                const uxuiItem = TIMELINE_DATA.find(x => x.id === 'uxui')!;
+
+                return (
+                  <div 
+                    key="ascensio-group-card" 
+                    className="flex flex-col bg-card-bg/30 border border-custom-border hover:border-text-secondary/40 rounded-lg p-6 md:p-8 transition-all duration-300 hover:shadow-sm space-y-5 w-full select-none animate-fadeIn"
+                    id="roadmap-card-ascensio-group"
                   >
-                    {isEducation ? (
-                      <GraduationCap className="w-4 h-4" />
-                    ) : isPivot ? (
-                      <RefreshCw className="w-3.5 h-3.5" />
-                    ) : (
-                      <Briefcase className="w-3.5 h-3.5" />
-                    )}
-                  </button>
-  
-                  {/* Content Container Card */}
-                  <div className="flex-grow bg-card-bg border border-custom-border hover:border-text-secondary/50 rounded-lg p-5 md:p-6 transition-all duration-300 shadow-none">
-                    <div 
-                      onClick={() => toggleExpand(item.id)}
-                      className="cursor-pointer flex flex-col md:flex-row md:items-center justify-between gap-4"
-                    >
+                    {/* Integrated Header of Combined Card (Company details + general period + Collapse/Expand button) */}
+                    <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 pb-4 border-b border-custom-border/65">
                       <div className="space-y-1">
-                        <div className="flex items-center gap-2 flex-wrap">
-                          <span className="font-mono text-xs text-text-secondary font-semibold bg-page-bg px-2 py-0.5 rounded">
-                            {item.period}
+                        <div className="flex items-center gap-2">
+                          <span className="inline-flex items-center gap-1.5 font-mono text-xs text-text-secondary font-semibold bg-page-bg border border-custom-border/40 px-2.25 py-0.5 rounded">
+                            <Briefcase className="w-3.5 h-3.5 text-semantic-work-text" />
+                            <span>2019 &ndash; 2026</span>
                           </span>
-                          
-                          {isLead && (
-                            <span className="font-mono text-[9px] font-bold text-semantic-work-text bg-semantic-work-bg border border-semantic-work-text/20 px-1.5 py-0.5 rounded tracking-wider uppercase">
-                              Active Lead
-                            </span>
-                          )}
-  
-                          {isEducation && (
-                            <span className="font-mono text-[9px] font-bold text-semantic-study-text bg-semantic-study-bg border border-semantic-study-text/20 px-1.5 py-0.5 rounded tracking-wider uppercase">
-                              Anabin Cert
-                            </span>
-                          )}
                         </div>
-  
-                        <h3 className="font-sans font-bold text-base md:text-lg text-text-main">
-                          {item.title}
+                        <h3 className="font-sans font-bold text-lg md:text-xl text-text-main">
+                          SIA "Ascensio System" (ONLYOFFICE)
                         </h3>
-  
-                        <p className="font-mono text-xs text-text-secondary font-medium">
-                          {item.organization}
+                        <p className="font-mono text-xs text-text-secondary">
+                          Internal Career Growth &bull; Total of 7 years
                         </p>
                       </div>
 
                       <div className="flex items-center gap-3">
-                        <span className="hidden md:inline font-mono text-[11px] text-text-super group-hover:text-interactive transition-colors">
-                          {isExpanded ? 'Collapse Details' : 'Expand Details'}
-                        </span>
-                        <span>
-                          {isExpanded ? (
-                            <ChevronUp className="w-4 h-4 text-text-secondary group-hover:text-interactive transition-colors" />
+                        <button
+                          onClick={() => setAscensioExpanded(!ascensioExpanded)}
+                          className="flex items-center gap-1.5 px-3 py-1.5 rounded border border-custom-border bg-page-bg hover:bg-card-bg/50 text-text-secondary hover:text-text-main transition-all font-mono text-[11px] cursor-pointer"
+                        >
+                          <span className="hidden sm:inline">
+                            {ascensioExpanded ? 'Collapse Details' : 'Expand Details'}
+                          </span>
+                          {ascensioExpanded ? (
+                            <ChevronUp className="w-4 h-4 text-text-secondary" />
                           ) : (
-                            <ChevronDown className="w-4 h-4 text-text-secondary group-hover:text-interactive transition-colors" />
+                            <ChevronDown className="w-4 h-4 text-text-secondary" />
                           )}
-                        </span>
+                        </button>
                       </div>
                     </div>
 
-                    <div className="mt-4 text-sm text-text-secondary font-sans border-t border-custom-border pt-3">
-                      <p className="leading-relaxed font-light">{item.context}</p>
-                    </div>
+                    {/* Integrated Hierarchical Timeline representing career growth */}
+                    <div className="relative pl-6 md:pl-8 space-y-8 pt-2">
+                      {/* Vertical line connecting the roles inside the company */}
+                      <div className="absolute left-[10px] md:left-[12px] top-4 bottom-4 w-[1px] bg-custom-border pointer-events-none border-dashed border-text-secondary/20"></div>
 
-                    {/* Expandable detailed outcomes */}
-                    {isExpanded && item.details && (
-                      <div className="mt-4 border-t border-dashed border-custom-border pt-4 space-y-2.5">
-                        <span className="font-mono text-[10px] text-text-super uppercase tracking-widest block">
-                          Key Areas & Accomplishments
-                        </span>
-                        <ul className="space-y-2">
-                          {item.details.map((detail, dIdx) => (
-                            <li key={dIdx} className="flex gap-2.5 items-start text-xs text-text-secondary leading-relaxed font-sans">
-                              <span className="inline-block w-1.5 h-1.5 bg-text-main rounded-full mt-1.5 flex-shrink-0"></span>
-                              <span>{detail}</span>
-                            </li>
-                          ))}
-                        </ul>
+                      {/* 1. Senior Designer & Team Lead Role */}
+                      <div className="relative space-y-2">
+                        {/* Bullet hub icon on timeline */}
+                        <div className="absolute -left-[20px] md:-left-[24px] top-1.5 w-3 h-3 rounded-full bg-semantic-work-text border-2 border-page-bg shadow-sm"></div>
+                        
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <span className="font-mono text-xs text-text-secondary font-semibold bg-page-bg border border-custom-border/30 px-2 py-0.5 rounded">
+                            {leaderItem.period}
+                          </span>
+                          <span className="font-mono text-[9px] font-bold text-semantic-work-text bg-semantic-work-bg border border-semantic-work-text/20 px-1.5 py-0.5 rounded tracking-wider uppercase">
+                            Active Lead
+                          </span>
+                        </div>
+
+                        <h4 className="font-sans font-bold text-base md:text-lg text-text-main">
+                          {leaderItem.title}
+                        </h4>
+
+                        <p className="text-sm text-text-secondary font-sans leading-relaxed font-light">
+                          {leaderItem.context}
+                        </p>
+
+                        {/* Collapsible Key Areas for the Senior position */}
+                        {ascensioExpanded && leaderItem.details && (
+                          <div className="border-t border-dashed border-custom-border pt-4 mt-2 space-y-2.5">
+                            <span className="font-mono text-[10px] text-text-super uppercase tracking-widest block">
+                              Key Areas & Accomplishments
+                            </span>
+                            <ul className="space-y-2">
+                              {leaderItem.details.map((detail, dIdx) => (
+                                <li key={dIdx} className="flex gap-2.5 items-start text-xs text-text-secondary leading-relaxed font-sans">
+                                  <span className="inline-block w-1.5 h-1.5 bg-text-main rounded-full mt-1.5 flex-shrink-0"></span>
+                                  <span>{detail}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
                       </div>
-                    )}
 
+                      {/* 2. UX/UI Designer (Previous Role) */}
+                      <div className="relative space-y-2">
+                        {/* Bullet hub dot on timeline */}
+                        <div className="absolute -left-[19px] md:-left-[23px] top-1.5 w-2 h-2 rounded-full bg-text-secondary/40 border border-page-bg"></div>
+
+                        <div className="flex items-center gap-2">
+                          <span className="font-mono text-xs text-text-secondary font-semibold bg-page-bg border border-custom-border/30 px-2 py-0.5 rounded">
+                            {uxuiItem.period}
+                          </span>
+                        </div>
+
+                        <h4 className="font-sans font-bold text-base text-text-main">
+                          {uxuiItem.title}
+                        </h4>
+
+                        <p className="text-sm text-text-secondary font-sans leading-relaxed font-light">
+                          {uxuiItem.context}
+                        </p>
+                      </div>
+
+                    </div>
                   </div>
+                );
+              }
+
+              // Standard rendering for other timeline items (Academic and older roles)
+              const isExpanded = expandedId === item.id;
+              const isEducation = item.type === 'education';
+              const isPivot = item.type === 'pivot';
+              const isAcademic = isEducation || isPivot;
+              
+              return (
+                <div 
+                  key={item.id} 
+                  className="flex flex-col bg-card-bg/30 border border-custom-border hover:border-text-secondary/40 rounded-lg p-6 md:p-8 transition-all duration-300 hover:shadow-sm space-y-4 w-full select-none"
+                  id={`roadmap-card-${item.id}`}
+                >
+                  <div 
+                    onClick={() => toggleExpand(item.id)}
+                    className="cursor-pointer flex flex-col md:flex-row md:items-start justify-between gap-4"
+                  >
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="inline-flex items-center gap-1.5 font-mono text-xs text-text-secondary font-semibold bg-page-bg border border-custom-border/40 px-2.25 py-0.5 rounded">
+                          {isAcademic ? (
+                            <GraduationCap className="w-3.5 h-3.5 text-semantic-study-text" />
+                          ) : (
+                            <Briefcase className="w-3.5 h-3.5 text-semantic-work-text" />
+                          )}
+                          <span>{item.period}</span>
+                        </span>
+
+                        {isEducation && (
+                          <span className="font-mono text-[9px] font-bold text-semantic-study-text bg-semantic-study-bg border border-semantic-study-text/20 px-1.5 py-0.5 rounded tracking-wider uppercase">
+                            Anabin Cert
+                          </span>
+                        )}
+                      </div>
+
+                      <h3 className="font-sans font-bold text-base md:text-lg text-text-main">
+                        {item.title}
+                      </h3>
+
+                      <p className="font-mono text-xs text-text-secondary font-medium">
+                        {item.organization}
+                      </p>
+                    </div>
+
+                    <div className="flex items-center gap-3 self-end md:self-start pt-1">
+                      <span className="hidden md:inline font-mono text-[11px] text-text-super hover:text-interactive transition-colors">
+                        {isExpanded ? 'Collapse Details' : 'Expand Details'}
+                      </span>
+                      <span>
+                        {isExpanded ? (
+                          <ChevronUp className="w-4 h-4 text-text-secondary transition-colors" />
+                        ) : (
+                          <ChevronDown className="w-4 h-4 text-text-secondary transition-colors" />
+                        )}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="text-sm text-text-secondary font-sans border-t border-custom-border pt-4">
+                    <p className="leading-relaxed font-light">{item.context}</p>
+                  </div>
+
+                  {/* Expandable detailed outcomes */}
+                  {isExpanded && item.details && (
+                    <div className="border-t border-dashed border-custom-border pt-4 space-y-2.5">
+                      <span className="font-mono text-[10px] text-text-super uppercase tracking-widest block">
+                        Key Areas & Accomplishments
+                      </span>
+                      <ul className="space-y-2">
+                        {item.details.map((detail, dIdx) => (
+                          <li key={dIdx} className="flex gap-2.5 items-start text-xs text-text-secondary leading-relaxed font-sans">
+                            <span className="inline-block w-1.5 h-1.5 bg-text-main rounded-full mt-1.5 flex-shrink-0"></span>
+                            <span>{detail}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
 
                 </div>
               );
