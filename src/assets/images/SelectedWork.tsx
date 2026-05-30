@@ -304,19 +304,34 @@ export default function SelectedWork() {
 
                 {/* 2. Slide Galleries Showcase - strictly below text details */}
                 <div className="space-y-4 pt-4" id="carousel-outer">
-                  <div className="w-full border border-custom-border rounded bg-card-bg overflow-hidden transition-all duration-300 shadow-none">
+                  <div className="w-full border border-custom-border rounded bg-card-bg transition-all duration-300 shadow-none">
                     
+                    {/* Browser Chrome Accent Bar */}
+                    <div className="bg-card-bg/60 px-4 py-2.5 flex items-center justify-between border-b border-custom-border select-none">
+                      <div className="flex items-center gap-1.5">
+                        <div className="w-2.5 h-2.5 rounded-full bg-red-400 dark:bg-red-500/85" />
+                        <div className="w-2.5 h-2.5 rounded-full bg-yellow-400 dark:bg-yellow-500/85" />
+                        <div className="w-2.5 h-2.5 rounded-full bg-green-400 dark:bg-green-500/85" />
+                        <span className="ml-2.5 font-mono text-[9px] text-text-super tracking-wide uppercase">
+                          {slides[activeIdx]?.label?.replace(/ /g, '_').toUpperCase() || 'MOCKUP_SCREENSHOT'}.PNG
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-1 bg-page-bg px-2 py-0.5 rounded text-[8px] font-mono border border-custom-border text-text-secondary select-all">
+                        <span>PORTFOLIO_CASE_STUDY_PREVIEW</span>
+                      </div>
+                    </div>
+
                     {/* Screenshot Viewer Sandbox Console - no interactive inputs, clean image gallery */}
                     <div className="relative bg-zinc-950 overflow-hidden group w-full aspect-[16/10] flex items-center justify-center">
                       <div className="absolute inset-0 select-none">
-                        <AnimatePresence>
+                        <AnimatePresence mode="wait">
                           <motion.div
                             key={activeIdx}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
+                            initial={{ opacity: 0, x: 30 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -30 }}
                             transition={{ duration: 0.35, ease: "easeInOut" }}
-                            className="absolute inset-0 w-full h-full flex items-center justify-center bg-zinc-950"
+                            className="relative w-full h-full flex items-center justify-center bg-zinc-950"
                           >
                             <img
                               src={slides[activeIdx]?.src}
@@ -324,6 +339,32 @@ export default function SelectedWork() {
                               className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.02]"
                               referrerPolicy="no-referrer"
                             />
+
+                            {/* Elegant Technical Blueprint Specifications Overlay */}
+                            <div className="absolute inset-0 pointer-events-none border border-white/5">
+                              {/* Overlay credentials and metadata */}
+                              <div className="absolute top-3 left-3 flex items-center gap-1.5 font-mono text-[9px] bg-black/80 text-white/95 px-2.5 py-1 rounded border border-white/10 shadow-lg backdrop-blur-[2px]">
+                                <span className="text-blue-400 font-bold font-mono">CASE_{proj.id.toUpperCase().replace('-', '_')}</span>
+                                <span className="opacity-30">|</span>
+                                <span>SLIDE_{activeIdx + 1}</span>
+                              </div>
+                              
+                              <div className="absolute top-3 right-3 font-mono text-[9px] bg-black/80 text-white/95 px-2.5 py-1 rounded border border-white/10 shadow-lg backdrop-blur-[2px]">
+                                <span>1920 &times; 1080 PX</span>
+                              </div>
+
+                              {/* Aesthetic drafting guides and coordinate hashes */}
+                              <div className="absolute inset-6 border border-dashed border-white/10 rounded-sm">
+                                <span className="absolute -top-1.5 -left-1.5 text-[8px] font-mono text-white/30 select-none">+</span>
+                                <span className="absolute -top-1.5 -right-1.5 text-[8px] font-mono text-white/30 select-none">+</span>
+                                <span className="absolute -bottom-1.5 -left-1.5 text-[8px] font-mono text-white/30 select-none">+</span>
+                                <span className="absolute -bottom-1.5 -right-1.5 text-[8px] font-mono text-white/30 select-none">+</span>
+
+                                <div className="absolute bottom-2 left-2 text-[8px] font-mono text-white/30 tracking-wider">
+                                  H-ALIGN: TRUE &bull; OPTIMIZED FLAT
+                                </div>
+                              </div>
+                            </div>
                           </motion.div>
                         </AnimatePresence>
                       </div>
