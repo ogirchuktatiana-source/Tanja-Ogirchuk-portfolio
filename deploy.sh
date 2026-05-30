@@ -1,3 +1,4 @@
+# ./deploy.sh
 #!/bin/bash
 
 #1. Force the script to stop on any error.
