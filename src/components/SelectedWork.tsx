@@ -17,6 +17,8 @@ import { PROJECTS_DATA } from '../data';
 // @ts-ignore
 import docServerStats from '../assets/images/DocServerAdminPanel/Statistics.png';
 // @ts-ignore
+import docServerAI from '../assets/images/DocServerAdminPanel/Al_Integration.png';
+// @ts-ignore
 import docServerJWT from '../assets/images/DocServerAdminPanel/JWT_Settings.png';
 // @ts-ignore
 import docServerIP from '../assets/images/DocServerAdminPanel/IP_Filtering.png';
@@ -66,13 +68,18 @@ export default function SelectedWork() {
         src: docServerStats
       },
       {
+        label: 'Al Integration',
+        caption: 'Al Integration Settings - Connected AI model management, API endpoint configurations, and supported task details.',
+        src: docServerAI
+      },
+      {
         label: 'Security Settings',
-        caption: 'Security Settings - JSON Web Token (JWT) tenant configuration and interactive secret lifespan slider controller.',
+        caption: 'JWT Configuration — Manage authorization headers, secret keys, token expiration times, and authentication algorithms.',
         src: docServerJWT
       },
       {
         label: 'Access Rules',
-        caption: 'Access Rules - Nginx-style allow/deny firewall grid lists for granular client IP-address filtering.',
+        caption: 'IP Filtering — Access control management, custom allow/deny rules configuration, and IP range restrictions.',
         src: docServerIP
       },
     ],
