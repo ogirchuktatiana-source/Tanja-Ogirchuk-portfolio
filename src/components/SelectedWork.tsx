@@ -25,6 +25,8 @@ import docServerIP from '../assets/images/DocServerAdminPanel/IP_Filtering.png';
 // @ts-ignore
 import adminDocsCloudImg from '../assets/images/admin_docs_cloud_1779959265791.png';
 // @ts-ignore
+import IntegrationEdition from '../assets/images/integration_edition/Integration_Edition.png';
+// @ts-ignore
 import workspaceFolderTreeImg from '../assets/images/workspace_folder_tree_1780162065039.png';
 // @ts-ignore
 import apiDeveloperPortalImg from '../assets/images/api_developer_portal_1780162087208.png';
@@ -111,9 +113,9 @@ export default function SelectedWork() {
     ],
     'integration-edition': [
       {
-        label: 'Help Center Navigation Redesign',
-        caption: 'Help Center Interface - Modern, highly navigable knowledgebase portal layout for cloud integrations.',
-        src: helpCenterNavImg
+        label: 'Integration Edition',
+        caption: 'ONLYOFFICE Integration Edition service, designed to allow you to test all the editor is features before purchasing.',
+        src: IntegrationEdition
       },
       // TODO: Visual Workflow Builder and Webhook Monitoring Console screenshots are not yet exported.
     ],
@@ -163,7 +165,7 @@ export default function SelectedWork() {
     'cloud-admin': 'Designed the SaaS administrative panel from scratch to help enterprise clients easily manage self-hosted collaboration servers. Focused on data visualization to build clear dashboards for tracking real-time server metrics and capacity limits.',
     'admin-docs-cloud': 'Engineered multi-tenant administration workflows and document libraries, bringing advanced search patterns, file collaboration permissions, and live diagnostic monitoring to cloud deployments.',
     'design-system': 'Developed clean technical developer portals. Built detailed API Documentation layouts that map direct JSON payloads and authorization guidelines for developers to scale services seamlessly.',
-    'integration-edition': 'Designed the integration framework to seamlessly embed collaborative editors into third-party SaaS ecosystems, streamlining API configurations and developer hand-off guides during platform partnerships.',
+    'integration-edition': 'The Integration Edition layout emphasizes ease of navigation: convenient one-click creation of new files, quick document uploads, and an informative table for managing existing files with a flexible role system (editors / viewers).\nI created an intuitive and concise web panel that allows users to test the full functionality of ONLYOFFICE editors before purchasing.',
     'landing-pages': 'Crafted high-converting, premium marketing landing pages for global enterprise products. Leveraged strict grid alignments, compelling typography pairings, and micro-interactions.',
     'presentations': 'Designed clean, high-impact corporate presentations and sales slide decks for key stakeholding panels. Focused on clear visual hierarchy, storytelling, and elegant data representation.',
     'marketplace': 'Designed a robust, scalable cloud application and plugin marketplace interface, connecting enterprise solutions with modular extensions and single-click installer widgets.',

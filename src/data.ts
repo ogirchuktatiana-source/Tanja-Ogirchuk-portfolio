@@ -18,7 +18,7 @@ export const HERO_DATA = {
 export const TIMELINE_DATA: TimelineItem[] = [
   {
     id: 'leader',
-    period: '2021 – Present',
+    period: '2021 – 2025',
     title: 'Senior Designer & Team Lead',
     organization: 'SIA "Ascensio System" (ONLYOFFICE)',
     context: 'Designing DocServer Admin Panel (SaaS), building Figma-to-Storybook design systems using Variables & Tokens, and managing the design team.',
@@ -129,9 +129,9 @@ export const PROJECTS_DATA: Project[] = [
     title: 'Integration Edition',
     role: 'Senior UX/UI Designer',
     images: [
-      '/integration_edition/integration-edition.png',
+      '/integration_edition/Integration_Edition.png',
     ] , 
-    impact: 'Designed the integration framework to seamlessly embed collaborative editors into third-party SaaS ecosystems, streamlining API configurations and developer hand-off guides.',
+    impact: 'The Integration Edition layout emphasizes ease of navigation: convenient one-click creation of new files, quick document uploads, and an informative table for managing existing files with a flexible role system (editors/viewers). I created an intuitive and concise web panel that allows users to test the full functionality of ONLYOFFICE editors before purchasing.',
     tags: ['Integration API', 'Iframe Mechanics', 'Developer UX', 'Configuration Flow']
   },
   {
