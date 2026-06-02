@@ -108,17 +108,19 @@ export const PROJECTS_DATA: Project[] = [
     title: 'Admin DocsCloud',
     role: 'Senior Product Designer',
     images: [
-      '/admin_docs_cloud/admin_docs_cloud_1779959265791.png',
+      '/admin_docs_cloud/DocsCloud_User_activity.png',
+      '/admin_docs_cloud/DocsCloud_Prepaid_reduction_users.png',
     ] ,
     impact: 'Engineered multi-tenant administration workflows and document libraries, bringing advanced search patterns, file collaboration permissions, and live diagnostic monitoring to cloud deployments.',
     tags: ['Cloud Administration', 'Multi-tenant Permissions', 'Document Orchestration', 'SaaS Architecture']
   },
   {
-    id: 'design-system',
+    id: 'api-doc',
     title: 'API Documentation',
     role: 'Senior UX/UI Designer',
     images: [
-      '/API_Documentation/design_system_74208224.png',
+      '/API_Documentation/API.png',
+      '/API_Documentation/API_method.png',
     ] ,
     image: '/design_system_74208224.png',
     impact: 'Created a component library based on Figma’s Variables and design tokens for Storybook integration.',

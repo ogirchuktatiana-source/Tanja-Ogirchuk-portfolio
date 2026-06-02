@@ -14,7 +14,8 @@ import { motion, AnimatePresence } from 'motion/react';
 import { PROJECTS_DATA } from '../data';
 
 // Import local project assets with TS ignore directives to prevent compilation type check failures
-// @ts-ignore
+
+// Slide DocsServer AdminPanel
 import docServerStats from '../assets/images/DocServerAdminPanel/Statistics.png';
 // @ts-ignore
 import docServerAI from '../assets/images/DocServerAdminPanel/Al_Integration.png';
@@ -22,28 +23,44 @@ import docServerAI from '../assets/images/DocServerAdminPanel/Al_Integration.png
 import docServerJWT from '../assets/images/DocServerAdminPanel/JWT_Settings.png';
 // @ts-ignore
 import docServerIP from '../assets/images/DocServerAdminPanel/IP_Filtering.png';
+
+// Slide Admin_docs_cloud
+import DocsCloudAct from '../assets/images/admin_docs_cloud/DocsCloud_User_activity.png';
 // @ts-ignore
-import adminDocsCloudImg from '../assets/images/admin_docs_cloud_1779959265791.png';
+import DocsCloudUser from '../assets/images/admin_docs_cloud/DocsCloud_Prepaid_reduction_users.png';
+
+// Slide API
+import apiDeveloper from '../assets/images/API_Documentation/API.png';
 // @ts-ignore
+import apiMetod from '../assets/images/API_Documentation/API_method.png';
+
+// Slide Integration-edition
 import IntegrationEdition from '../assets/images/integration_edition/Integration_Edition.png';
 // @ts-ignore
 import workspaceFolderTreeImg from '../assets/images/workspace_folder_tree_1780162065039.png';
-// @ts-ignore
-import apiDeveloperPortalImg from '../assets/images/api_developer_portal_1780162087208.png';
-// @ts-ignore
-import designSystemTokensImg from '../assets/images/design_system_tokens_1779874208224.png';
-// @ts-ignore
-import helpCenterNavImg from '../assets/images/help_center_navigation_1779874228492.png';
-// @ts-ignore
-import illustrationsImg from '../assets/images/illustrations_1779882579256.png';
-// @ts-ignore
+
+// Slide landing
 import landingPagesImg from '../assets/images/landing_pages_1779882519600.png';
-// @ts-ignore
-import logosImg from '../assets/images/logos_1779882598315.png';
-// @ts-ignore
+
+// Slide marketplace
 import marketplaceImg from '../assets/images/marketplace_1779882558247.png';
-// @ts-ignore
+
+// Slide Presentations
 import presentationsImg from '../assets/images/presentations_1779882539674.png';
+// @ts-ignore
+
+// Slide illustrations
+import illustrations_dev from '../assets/images/illustrations/illustrations_dev.png';
+// @ts-ignore
+import illustrations_Cover from '../assets/images/illustrations/illustrations_Cover.png';
+// @ts-ignore
+import illustrations_AI from '../assets/images/illustrations/illustrations_AI.png'
+// @ts-ignore
+
+// Slide logos
+import logosImg from '../assets/images/logos_1779882598315.png';
+
+
 
 export default function SelectedWork() {
   const [activeProject, setActiveProject] = useState<string>('cloud-admin');
@@ -52,7 +69,7 @@ export default function SelectedWork() {
   const [slideIndices, setSlideIndices] = useState<Record<string, number>>({
     'cloud-admin': 0,
     'admin-docs-cloud': 0,
-    'design-system': 0,
+    'api-doc': 0,
     'integration-edition': 0,
     'landing-pages': 0,
     'presentations': 0,
@@ -63,6 +80,8 @@ export default function SelectedWork() {
 
   // Slide content references mapping purely to local high-fidelity screenshots/visuals
   const projectSlides: Record<string, { label: string; caption: string; src: string }[]> = {
+    
+    // Slide Docs Server Admin Panel
     'cloud-admin': [
       {
         label: 'Statistics Dashboard',
@@ -85,32 +104,38 @@ export default function SelectedWork() {
         src: docServerIP
       },
     ],
+
+    // Slide Admin_docs_cloud
     'admin-docs-cloud': [
       {
         label: 'Organization Directories',
         caption: 'Workspace Directory - Multi-tenant team folders, active storage allocations, and nested organizational assets tree.',
-        src: adminDocsCloudImg
+        src: DocsCloudAct
       },
       {
-        label: 'Workspace Folder Tree',
+        label: 'DocsCloud Prepaid reduction users',
         caption: 'Workspace Folder Tree - Beautiful nested file manager view with modern grid layouts.',
-        src: workspaceFolderTreeImg
+        src: DocsCloudUser
       },
       // TODO: Permissions System and Log Diagnostic Monitoring screenshots are not yet exported.
     ],
-    'design-system': [
+
+    // Slide API
+    'api-doc': [
       {
         label: 'Endpoint Catalog',
-        caption: 'REST API Catalog - Complete list of HTTP method endpoints with real-time text query autocomplete and filter logic.',
-        src: apiDeveloperPortalImg
+        caption: 'api Developer - Complete list of HTTP method endpoints with real-time text query autocomplete and filter logic.',
+        src: apiDeveloper
       },
       {
         label: 'Figma Variables & Tokens',
-        caption: 'Figma Design Tokens System - Systematic color, spacing, and typography semantic token parameters map.',
-        src: designSystemTokensImg
+        caption: 'api Metod - Systematic color, spacing, and typography semantic token parameters map.',
+        src: apiMetod
       },
       // TODO: Detailed Inspector and Quick Start Snippet screenshots are not yet exported.
     ],
+
+    // Slide Integration-edition
     'integration-edition': [
       {
         label: 'Integration Edition',
@@ -119,6 +144,8 @@ export default function SelectedWork() {
       },
       // TODO: Visual Workflow Builder and Webhook Monitoring Console screenshots are not yet exported.
     ],
+
+    // Slide landing-pages
     'landing-pages': [
       {
         label: 'Marketing Case Study',
@@ -127,6 +154,8 @@ export default function SelectedWork() {
       },
       // TODO: Pricing Feature Matrix and Conversion A/B analytics screenshots are unable to load offline.
     ],
+    
+    // Slide Presentations
     'presentations': [
       {
         label: 'Corporate Slide Deck',
@@ -135,6 +164,8 @@ export default function SelectedWork() {
       },
       // TODO: Master Aspect Ratio Ruler and Typography Scale layouts are not yet exported.
     ],
+
+    // Slide Marketplace
     'marketplace': [
       {
         label: 'App Store Grid',
@@ -143,14 +174,28 @@ export default function SelectedWork() {
       },
       // TODO: Application Direct Consent and Developer Publisher views are not yet exported.
     ],
+
+      // Slide Illustrations
     'illustrations': [
       {
-        label: 'Vector Illustration Assets Showcase',
+        label: 'Illustration for dev blog',
         caption: 'Elegant vector brand illustration style guide detailing structural drawing lines and soft shadows.',
-        src: illustrationsImg
+        src: illustrations_dev
+      },
+       {
+        label: 'Illustration AI',
+        caption: 'Elegant vector brand illustration style guide detailing structural drawing lines and soft shadows.',
+        src: illustrations_AI
+      },
+       {
+        label: 'illustrations Cover for YouTube',
+        caption: 'Elegant vector brand illustration style guide detailing structural drawing lines and soft shadows.',
+        src: illustrations_Cover
       },
       // TODO: Character Anatomy and 3D Isometric grid models are not yet exported.
     ],
+
+      // Slide logos
     'logos': [
       {
         label: 'Corporate Identity Mark Construct',
@@ -164,7 +209,7 @@ export default function SelectedWork() {
   const projectDescriptions: Record<string, string> = {
     'cloud-admin': 'Designed the SaaS administrative panel from scratch to help enterprise clients easily manage self-hosted collaboration servers. Focused on data visualization to build clear dashboards for tracking real-time server metrics and capacity limits.',
     'admin-docs-cloud': 'Engineered multi-tenant administration workflows and document libraries, bringing advanced search patterns, file collaboration permissions, and live diagnostic monitoring to cloud deployments.',
-    'design-system': 'Developed clean technical developer portals. Built detailed API Documentation layouts that map direct JSON payloads and authorization guidelines for developers to scale services seamlessly.',
+    'api-doc': 'Developed clean technical developer portals. Built detailed API Documentation layouts that map direct JSON payloads and authorization guidelines for developers to scale services seamlessly.',
     'integration-edition': 'The Integration Edition layout emphasizes ease of navigation: convenient one-click creation of new files, quick document uploads, and an informative table for managing existing files with a flexible role system (editors / viewers).\nI created an intuitive and concise web panel that allows users to test the full functionality of ONLYOFFICE editors before purchasing.',
     'landing-pages': 'Crafted high-converting, premium marketing landing pages for global enterprise products. Leveraged strict grid alignments, compelling typography pairings, and micro-interactions.',
     'presentations': 'Designed clean, high-impact corporate presentations and sales slide decks for key stakeholding panels. Focused on clear visual hierarchy, storytelling, and elegant data representation.',

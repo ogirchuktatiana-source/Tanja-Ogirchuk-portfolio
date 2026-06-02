@@ -104,7 +104,7 @@ export default function SkillsFooter() {
               </div>
               
               <p className="text-sm text-text-secondary leading-relaxed font-sans font-light max-w-2xl">
-                Tatiana is based in Munich (Anabin cert / Es gibt berufliche Anerkennung) and open to collaborating on complex UI dashboards, design system networks, and SaaS product leadership.
+                I am based in Munich (Anabin cert / Es gibt berufliche Anerkennung) and open to collaborating on complex UI dashboards, design system networks, and SaaS product leadership.
               </p>
 
               <button
