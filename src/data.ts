@@ -141,7 +141,8 @@ export const PROJECTS_DATA: Project[] = [
     title: 'Landing Pages',
     role: 'Senior Visual Designer',
     images: [
-      '/landing_pages/landing-pages.png',
+      '/landing_pages/Landing_Manage.png',
+      '/landing_pages/devices.png',
     ] , 
     image: '/landing_page_82519600.png',
     impact: 'Crafted high-converting, premium marketing landing pages for global enterprise products. Leveraged strict grid alignments, compelling typography pairings, and micro-interactions.',
@@ -152,7 +153,7 @@ export const PROJECTS_DATA: Project[] = [
     title: 'Presentations',
     role: 'Design Lead',
     images: [
-      '/presentations/presentations_1779882539674.png',
+      '/presentations/presentations.png',
     ] , 
     impact: 'Designed clean, high-impact corporate presentations and sales slide decks for key stakeholding panels. Focused on clear visual hierarchy, storytelling, and elegant data representation.',
     tags: ['Corporate Deck', 'Storytelling', 'Data Representation', 'Typography']
@@ -162,7 +163,8 @@ export const PROJECTS_DATA: Project[] = [
     title: 'Marketplace',
     role: 'Lead Product Designer',
     images: [
-      '/marketplace/marketplace.png',
+      '/marketplace/marketplaceClaudeM.png',
+      '/marketplace/marketplaceClaudeDocSpace.png',
     ] , 
     impact: 'Designed a robust, scalable cloud application and plugin marketplace interface, connecting enterprise solutions with modular extensions and single-click installer widgets.',
     tags: ['E-commerce', 'SaaS Directory', 'Search Navigation', 'Grid Layouts']
@@ -173,6 +175,7 @@ export const PROJECTS_DATA: Project[] = [
     role: 'Graphic & Brand Illustrator',
     images: [
       '/illustrations/illustrations.png',
+      '/illustrations/illustrations_AI.png',
     ] , 
     impact: 'Crafted a versatile vector illustration style guide, developing branded key visuals, custom isometric scenes, and unique character design libraries used across branding assets.',
     tags: ['Vector Graphics', 'Branding Guide', 'Flat Illustration', 'Isometric Assets']
@@ -182,7 +185,7 @@ export const PROJECTS_DATA: Project[] = [
     title: 'Logos',
     role: 'Brand Identity Designer',
     images: [
-      '/logos/logos.png',
+      'logos/Logo_Dev.png',
     ] , 
     impact: 'Created iconic, timeless corporate identity solutions and clever negative-space logo grid constructions for dynamic tech startups and established agencies alike.',
     tags: ['Branding Systems', 'Logo Design', 'Aesthetic Grid', 'Symbol Construction']

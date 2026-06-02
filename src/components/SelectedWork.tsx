@@ -40,13 +40,15 @@ import IntegrationEdition from '../assets/images/integration_edition/Integration
 import workspaceFolderTreeImg from '../assets/images/workspace_folder_tree_1780162065039.png';
 
 // Slide landing
-import landingPagesImg from '../assets/images/landing_pages_1779882519600.png';
+import landingdevices from '../assets/images/landing_pages/devices.png';
+import landingManage from '../assets/images/landing_pages/Landing_Manage.png';
 
 // Slide marketplace
-import marketplaceImg from '../assets/images/marketplace_1779882558247.png';
+import ClaudeDocSpace from '../assets/images/marketplace/marketplaceClaudeDocSpace.png';
+import ClaudeM from '../assets/images/marketplace/marketplaceClaudeM.png';
 
 // Slide Presentations
-import presentationsImg from '../assets/images/presentations_1779882539674.png';
+import presentationsImg from '../assets/images/presentations/presentations.png';
 // @ts-ignore
 
 // Slide illustrations
@@ -58,7 +60,7 @@ import illustrations_AI from '../assets/images/illustrations/illustrations_AI.pn
 // @ts-ignore
 
 // Slide logos
-import logosImg from '../assets/images/logos_1779882598315.png';
+import logosImg from '../assets/images/logos/Logo_Dev.png';
 
 
 
@@ -147,11 +149,17 @@ export default function SelectedWork() {
 
     // Slide landing-pages
     'landing-pages': [
+       {
+        label: 'Marketing Case Study',
+        caption: 'Conversion-optimized Enterprise Marketing Landing Page with high typographic contrast and spacious layout.',
+        src: landingManage
+      },
       {
         label: 'Marketing Case Study',
         caption: 'Conversion-optimized Enterprise Marketing Landing Page with high typographic contrast and spacious layout.',
-        src: landingPagesImg
+        src: landingdevices
       },
+      
       // TODO: Pricing Feature Matrix and Conversion A/B analytics screenshots are unable to load offline.
     ],
     
@@ -170,7 +178,12 @@ export default function SelectedWork() {
       {
         label: 'App Store Grid',
         caption: 'SaaS App Store Directory layout showcasing discoverable category filter buttons with pristine alignments.',
-        src: marketplaceImg
+        src: ClaudeDocSpace
+      },
+      {
+        label: 'App Store Grid',
+        caption: 'SaaS App Store Directory layout showcasing discoverable category filter buttons with pristine alignments.',
+        src: ClaudeM
       },
       // TODO: Application Direct Consent and Developer Publisher views are not yet exported.
     ],
@@ -198,7 +211,7 @@ export default function SelectedWork() {
       // Slide logos
     'logos': [
       {
-        label: 'Corporate Identity Mark Construct',
+        label: 'Logo',
         caption: 'Timeless branding logo and vector grid guidelines for startups and established global teams.',
         src: logosImg
       },
