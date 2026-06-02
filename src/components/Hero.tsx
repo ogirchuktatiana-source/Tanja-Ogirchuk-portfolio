@@ -56,7 +56,7 @@ export default function Hero() {
               </h1>
             </div>
 
-            <p className="text-xl md:text-2xl text-text-main font-medium leading-relaxed tracking-tight max-w-3xl">
+            <p className="text-xl md:text-2xl text-text-main font-medium leading-relaxed tracking-tight max-w-3xl whitespace-pre-line">
               {HERO_DATA.bio}
             </p>
             

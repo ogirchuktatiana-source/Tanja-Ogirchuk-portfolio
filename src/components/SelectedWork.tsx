@@ -172,6 +172,7 @@ export default function SelectedWork() {
     'illustrations': 'Crafted a versatile vector illustration style guide, developing branded key visuals, custom isometric scenes, and unique character design libraries used across branding assets.',
     'logos': 'Created iconic, timeless corporate identity solutions and clever negative-space logo grid constructions for digital tech startups and established agencies alike.',
   };
+  
 
   const currentSlides = projectSlides[activeProject] || [];
 
@@ -262,6 +263,7 @@ export default function SelectedWork() {
                 key={proj.id} 
                 className="space-y-10 animate-fadeIn flex flex-col h-full justify-between"
                 id={`project-content-${proj.id}`}
+                
               >
                 {/* 1. Project Text / Spec details strictly on top */}
                 <div 
@@ -283,8 +285,8 @@ export default function SelectedWork() {
                     </h3>
                   </div>
 
-                  <p className="text-text-secondary font-sans text-sm md:text-base leading-relaxed">
-                    {detailedDesc}
+                  <p className="text-text-secondary font-sans text-sm md:text-base leading-relaxed whitespace-pre-line">
+                      {detailedDesc}
                   </p>
 
                   {/* Tech Tags */}
@@ -371,8 +373,8 @@ export default function SelectedWork() {
                     <div className="flex flex-col sm:flex-row items-center justify-between gap-4 px-1 w-full select-none">
                       <p className="text-xs text-text-secondary font-sans leading-relaxed text-center sm:text-left max-w-[85%] pr-2 flex items-center gap-2">
                         <Info className="inline w-3.5 h-3.5 text-blue-500 shrink-0" />
-                        <span>{slides[activeIdx].caption}</span>
-                      </p>
+                        <span className="whitespace-pre-line">{slides[activeIdx].caption}</span>
+                        </p>
                       
                       {slides.length > 1 && (
                         <div className="flex items-center gap-1 shrink-0 pt-1 sm:pt-0">
