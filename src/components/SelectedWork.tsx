@@ -25,7 +25,7 @@ import docServerJWT from '../assets/images/DocServerAdminPanel/JWT_Settings.png'
 import docServerIP from '../assets/images/DocServerAdminPanel/IP_Filtering.png';
 
 // Slide Admin_docs_cloud
-import DocsCloudAct from '../assets/images/admin_docs_cloud/DocsCloud_User_activity.png';
+import DocsCloudAct from '../assets/images/admin_docs_cloud/DocsCloud_User_activity.svg';
 // @ts-ignore
 import DocsCloudUser from '../assets/images/admin_docs_cloud/DocsCloud_Prepaid_reduction_users.png';
 

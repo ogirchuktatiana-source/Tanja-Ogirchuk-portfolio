@@ -9,7 +9,7 @@ export const HERO_DATA = {
   name: 'Tanja Ogirchuk',
   title: 'Senior Product Designer & Team Lead',
   location: 'Munich, Germany',
-  bio: 'I am a Senior Product Designer with a background in Applied Mathematics and Computer Science over 10 years of experience building complex digital products and design systems.\nLead a team of 6–8 designers: setting craft standards, developing talent, and fostering team culture. ',
+  bio: 'I am a Senior Product Designer with a background in Applied Mathematics and Computer Science over 10 years of experience building complex digital products and design systems.\nLed a team of 6–8 designers: set craft standards, developed talent, and fostered team culture. ',
   email: 'ogirchuk.tatiana@gmail.com',
   linkedin: 'www.linkedin.com/in/tanja-ogirchuk/',
   portfolioUrl: '#',
