@@ -108,7 +108,7 @@ export const PROJECTS_DATA: Project[] = [
     title: 'Admin DocsCloud',
     role: 'Senior Product Designer',
     images: [
-      '/admin_docs_cloud/DocsCloud_User_activity.png',
+      '/admin_docs_cloud/DocsCloud_User_activity.svg',
       '/admin_docs_cloud/DocsCloud_Prepaid_reduction_users.png',
     ] ,
     impact: 'Engineered multi-tenant administration workflows and document libraries, bringing advanced search patterns, file collaboration permissions, and live diagnostic monitoring to cloud deployments.',
@@ -212,51 +212,52 @@ export const LANGUAGES: Language[] = [
 export const RECOMMENDATIONS_DATA: Recommendation[] = [
   {
     id: 'col-1',
-    author: 'Maximiliano Schulz',
-    role: 'Product Manager (SaaS & Cloud Apps)',
-    company: 'SIA "Ascensio System" (ONLYOFFICE)',
-    period: 'Collaborated in 2023 – 2026',
-    relationship: 'Cross-functional Peer',
+    author: 'Tatiana Kochedykova',
+    role: 'Head of Marketing and Communications',
+    company: 'ONLYOFFICE',
+    period: 'Collaborated in 2019 – 2026',
+    relationship: 'Marketing & Communications Partner',
     category: 'product-management',
-    text: "Tanja's dual background in Applied Mathematics and product design makes her an exceptional problem-solver. On our DocServer Admin Panel launch, she transformed complex database relational parameters and server log metrics into a beautifully intuitive orchestration flow. She communicates fluently with both business planning and engineering teams, translating product vision into clean, token-driven specifications. Her leadership holds the design team to immaculate standards of visual polish and user clarity.",
-    tags: ['SaaS Design', 'Systems Thinking', 'Technical Alignment'],
-    linkedin: 'https://www.linkedin.com/pub/dir?first=Maximiliano&last=Schulz'
+    text: "I truly value our time working together. I always knew that whatever you took on, you would deliver it brilliantly. Having you lead the design team gave me absolute peace of mind; I never had to spend time over-explaining things or dealing with excuses. I was completely confident that everything on your end would be handled perfectly. Thank you for that reassurance and for making our collaboration so seamless. You are incredibly talented, and I sincerely wish you find an amazing next step where you can fully shine and achieve everything you dream of.",
+    tags: ['Creative Direction', 'Web & Digital Design', 'Visual Identity'],
+    linkedin: 'https://www.linkedin.com/in/tatiana-kochedykova-0832324a/'
   },
   {
     id: 'col-2',
-    author: 'Alexandru Costache',
-    role: 'Lead Frontend Architect',
-    company: 'SIA "Ascensio System"',
-    period: 'Direct Collaboration 2022 – 2026',
+    author: 'Sergey Linney',
+    role: 'Senior Programmer',
+    company: 'ONLYOFFICE',
+    period: 'Collaborated in 2019 – 2026',
     relationship: 'Engineering Partner',
     category: 'engineering-tech',
-    text: "Working with Tatiana is a developer's absolute dream. She built and managed our complete Figma-to-Storybook design tokens architecture. Instead of leaving edge cases for development, she delivered precise, variable-driven components with math-perfect responsive scaling. Her logical model is rock solid—she understands CSS mechanics deeply and addresses tricky responsive UI states proactively before any code is checked in. Truly the highest standard of developer hand-off.",
-    tags: ['Figma Variables', 'Storybook Integration', 'HTML/CSS Logic'],
-    linkedin: 'https://www.linkedin.com/pub/dir?first=Alexandru&last=Costache'
+    text: "Working with Tanja was a great experience. On our complex Admin DocsCloud and API Documentation projects, no matter how difficult or chaotic the architecture got, Tanja stepped up and managed it completely. She is a designer who genuinely understands the engineering perspective, never backs down from technical challenges, and always delivers.",
+    tags: ['SaaS Design','Developer Experience (DX)', 'Admin Workflows'],
+    linkedin: 'https://www.linkedin.com/in/linney/'
   },
   {
     id: 'col-3',
-    author: 'Elena Rostova',
-    role: 'UX Designer',
-    company: 'SIA "Ascensio System"',
-    period: 'Direct Report 2021 – 2025',
-    relationship: 'Mentorship Lead',
-    category: 'product-management',
-    text: "As a design team lead, Tatiana is an inspiring mentor who builds robust design processes. She introduced structured UI file layouts, component governance guidelines, and atomic design standards that drastically reduced prototype-to-production inconsistencies across our features. Her reviews are always deeply constructive, focusing on logical hierarchy, typographic tracking, and semantic token design, helping me level up from basic styling to complex web app layout design.",
-    tags: ['Team Leadership', 'Mentorship', 'Design Systems'],
-    linkedin: 'https://www.linkedin.com/pub/dir?first=Elena&last=Rostova'
+    author: 'Anna Medvedeva',
+    role: 'Head of Product Engineering Department',
+    company:'ONLYOFFICE',
+    period: 'Collaborated in 2019 – 2026',
+    relationship: 'Design Manager',
+    category: 'engineering-tech',
+    text: "Tanja brought incredible value to both our product development and our team dynamics. Having her in our design department was a wonderful experience. She is a remarkably inspiring professional with undeniable talent and passion for her craft. I truly believe she has a stellar future ahead of her and will succeed in any challenge she tackles.",
+    tags: ['Product Design', 'Design Culture'],
+    linkedin: 'https://www.linkedin.com/in/anna-medvedeva-137931a2/?locale=en'
   },
   {
     id: 'col-4',
-    author: 'Dmitry Medvedev',
-    role: 'Senior DevOps Architect',
-    company: 'SIA "Ascensio System"',
-    period: 'Collaborated in 2024',
-    relationship: 'Systems Peer',
-    category: 'engineering-tech',
-    text: "Tanja single-handedly simplified the onboarding and server configuration dashboards for our self-hosted enterprise clients. Where there were once dozens of terminal commands and raw JSON error codes, she introduced clear data visualizations, real-time telemetry gauge designs, and highly readable system states. Her mathematical background is incredibly obvious in the elegance of her system modeling.",
-    tags: ['Dashboard Design', 'Data Visualization', 'Telemetry UX'],
-    linkedin: 'https://www.linkedin.com/pub/dir?first=Dmitry&last=Medvedev'
+    author: 'Vyacheslav Belov',
+    role: 'Web Development Team Lead',
+    company: 'ONLYOFFICE',
+    period: 'Collaborated in 2019 – 2026',
+    relationship: 'Frontend & Web Partner',
+    category: 'product-management',
+    text: "Working with Tanja has been an absolute privilege. She brings a rare combination of exceptional design expertise, a strong professional character, and genuine human warmth to the team. As a web development lead, I deeply appreciated her resilience, her constructive approach to challenges, and how effortless she made the design-to-dev workflow. Tanja fosters a supportive, incredibly positive environment around her. She is a phenomenal professional and an amazing teammate.",
+    tags: ['Design-to-Dev Synergy', 'Web & Interactive Design'],
+    //linkedin: 'https://www.linkedin.com/pub/dir?first=Elena&last=Rostova'
   }
+  
 ];
 
