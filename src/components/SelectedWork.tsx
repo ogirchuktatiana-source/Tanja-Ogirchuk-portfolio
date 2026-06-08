@@ -37,7 +37,6 @@ import apiMetod from '../assets/images/API_Documentation/API_method.png';
 // Slide Integration-edition
 import IntegrationEdition from '../assets/images/integration_edition/Integration_Edition.png';
 // @ts-ignore
-import workspaceFolderTreeImg from '../assets/images/workspace_folder_tree_1780162065039.png';
 
 // Slide landing
 import landingdevices from '../assets/images/landing_pages/devices.png';
@@ -110,14 +109,14 @@ export default function SelectedWork() {
     // Slide Admin_docs_cloud
     'admin-docs-cloud': [
       {
+        label: 'DocsCloud Prepaid reduction users',
+        caption: 'Focused on risk-mitigation patterns (such as dynamic warnings during user seat downgrades) to eliminate accidental data loss, reduce support ticket volume, and build trust at critical financial touchpoints.',
+        src: DocsCloudUser
+      },
+       {
         label: 'Organization Directories',
         caption: 'Workspace Directory - Multi-tenant team folders, active storage allocations, and nested organizational assets tree.',
         src: DocsCloudAct
-      },
-      {
-        label: 'DocsCloud Prepaid reduction users',
-        caption: 'Workspace Folder Tree - Beautiful nested file manager view with modern grid layouts.',
-        src: DocsCloudUser
       },
       // TODO: Permissions System and Log Diagnostic Monitoring screenshots are not yet exported.
     ],

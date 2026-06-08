@@ -111,8 +111,8 @@ export const PROJECTS_DATA: Project[] = [
       '/admin_docs_cloud/DocsCloud_User_activity.svg',
       '/admin_docs_cloud/DocsCloud_Prepaid_reduction_users.png',
     ] ,
-    impact: 'Engineered multi-tenant administration workflows and document libraries, bringing advanced search patterns, file collaboration permissions, and live diagnostic monitoring to cloud deployments.',
-    tags: ['Cloud Administration', 'Multi-tenant Permissions', 'Document Orchestration', 'SaaS Architecture']
+    impact: 'Architected the multi-tenant enterprise administration framework and billing ecosystem for cloud deployments. Transformed complex data access control and subscription lifecycles into frictionless, risk-mitigated workflows that safeguard user retention and drive SaaS scalability.',
+    tags: ['Cloud Administration', 'Multi-tenant Permissions', 'B2B Platform Strategy', 'SaaS Architecture']
   },
   {
     id: 'api-doc',
@@ -133,8 +133,8 @@ export const PROJECTS_DATA: Project[] = [
     images: [
       '/integration_edition/Integration_Edition.png',
     ] , 
-    impact: 'The Integration Edition layout emphasizes ease of navigation: convenient one-click creation of new files, quick document uploads, and an informative table for managing existing files with a flexible role system (editors/viewers). I created an intuitive and concise web panel that allows users to test the full functionality of ONLYOFFICE editors before purchasing.',
-    tags: ['Integration API', 'Iframe Mechanics', 'Developer UX', 'Configuration Flow']
+    impact: 'Designed an interactive evaluation environment and Developer Experience (DX) platform that accelerates the B2B sales cycle. By replacing heavy deployment documentation with a frictionless, zero-configuration playground, corporate clients and developers can instantly validate API capabilities, preview cross-platform iframe behaviors, and test access permissions in real time. The Integration Edition layout emphasizes ease of navigation: convenient one-click creation of new files, quick document uploads, and an informative table for managing existing files with a flexible role system (editors/viewers).',
+    tags: ['Product-Led Growth (PLG)', 'Iframe Mechanics', 'B2B Sales Enablement', 'Developer Experience (DX)']
   },
   {
     id: 'landing-pages',
@@ -195,16 +195,16 @@ export const PROJECTS_DATA: Project[] = [
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     title: 'Core Expertise',
-    items: ['Team Leadership', 'Product Design', 'UX/UI Design', 'Web Design', 'Wireframing', 'Design Systems', 'Typography']
+    items: ['Design Leadership', 'Developer Experience (DX)', 'SaaS & Enterprise UX', 'Product Design', 'UX/UI Design',  'Design Systems', 'Design Systems',  'Brand & Web Design']
   },
   {
     title: 'Primary Tools',
-    items: ['Figma (Variables & Tokens)', 'Storybook', 'Adobe Illustrator', 'Adobe Photoshop', 'AI Design Utilities']
+    items: ['AI Design Utilities', 'Figma (Variables & Tokens)', 'Storybook', 'Adobe Illustrator & Photoshop']
   }
 ];
 
 export const LANGUAGES: Language[] = [
-  { name: 'English', level: 'Professional (B2)' },
+  { name: 'English', level: 'Fluency' },
   { name: 'German', level: 'Intermediate (B1)' },
   { name: 'Russian', level: 'Native / Bilingual' }
 ];
