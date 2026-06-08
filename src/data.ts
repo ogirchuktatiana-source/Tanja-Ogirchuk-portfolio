@@ -246,6 +246,18 @@ export const RECOMMENDATIONS_DATA: Recommendation[] = [
     tags: ['Product Design', 'Design Culture'],
     linkedin: 'https://www.linkedin.com/in/anna-medvedeva-137931a2/?locale=en'
   },
+   {
+    id: 'col-5',
+    author: 'Nadia Sidorova',
+    role: 'UI/UX | Product Designer',
+    company:'ONLYOFFICE',
+    period: 'Collaborated in 2020 – 2026',
+    relationship: 'Direct Report',
+    category: 'engineering-tech',
+    text: "It has been a genuine pleasure working with Tanja for the past six years. For me, she was more than just a team leader – I always had warm feelings toward her as a person. That personal connection only strengthened my desire to work under her guidance. When it comes to teamwork, Tanja truly embodies it. She knows how to bring people together, support each team member, and create an environment where everyone feels valued and motivated. I am grateful for the years we’ve worked side by side, and I would be happy to work with her again anytime.",
+    tags: ['Design Leadership', 'Team Culture'],
+    linkedin: 'https://www.linkedin.com/in/nadia-sidorova-2ab365204/'
+  },
   {
     id: 'col-4',
     author: 'Richard White',
