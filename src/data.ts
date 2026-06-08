@@ -224,7 +224,7 @@ export const RECOMMENDATIONS_DATA: Recommendation[] = [
   },
   {
     id: 'col-2',
-    author: 'Sergey Linney',
+    author: 'Sergey Linnik',
     role: 'Senior Programmer',
     company: 'ONLYOFFICE',
     period: 'Collaborated in 2019 – 2026',
@@ -248,7 +248,7 @@ export const RECOMMENDATIONS_DATA: Recommendation[] = [
   },
   {
     id: 'col-4',
-    author: 'Vyacheslav Belov',
+    author: 'Richard White',
     role: 'Web Development Team Lead',
     company: 'ONLYOFFICE',
     period: 'Collaborated in 2019 – 2026',
