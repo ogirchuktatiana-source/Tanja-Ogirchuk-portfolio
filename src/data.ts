@@ -97,6 +97,7 @@ export const PROJECTS_DATA: Project[] = [
     role: 'Senior Product Designer',
     images: [
       '/DocServerAdminPanel/Statistics.png',
+      '/DocServerAdminPanel/AI_Integration.png',
       '/DocServerAdminPanel/JWT_Settings.png',
       '/DocServerAdminPanel/IP_Filtering.png'
     ],
