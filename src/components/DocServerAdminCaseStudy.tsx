@@ -479,7 +479,7 @@ export default function DocServerAdminCaseStudy({ onClose }: CaseStudyProps) {
                 <span className="font-mono text-xs text-[#2F4EFF] font-bold tracking-widest uppercase">04 / DESIGN SYSTEM</span>
               </div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-sans font-extrabold text-zinc-950 tracking-tight">
-                04 / DESIGN SYSTEM
+                Icons
               </h2>
               <p className="text-sm md:text-base text-zinc-600 leading-relaxed max-w-3xl">
                 A strong, restrained design system doesn't have to be sterile. I use strategic, charming line-art icons to add character and make the interface more approachable, showing that even professional tools can have personality.
@@ -572,7 +572,7 @@ export default function DocServerAdminCaseStudy({ onClose }: CaseStudyProps) {
           </p>
 
           <div className="pt-3 flex flex-wrap justify-center gap-3.5">
-            <button
+           {/* <button
               onClick={() => {
                 onClose();
                 setTimeout(() => {
@@ -585,6 +585,7 @@ export default function DocServerAdminCaseStudy({ onClose }: CaseStudyProps) {
               <span>Contact Tatiana</span>
               <ArrowRight className="w-4 h-4 text-white" />
             </button>
+          */}
 
             <button
               onClick={onClose}

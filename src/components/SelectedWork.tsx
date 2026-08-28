@@ -712,9 +712,10 @@ export default function SelectedWork({
                         </button>
                       )}
 
-                      {/* Special Final Step Callout for Logos Part 2 */}
+                      {/* Special Final Step Callout for Logos Part 2 
                       {isAtFinalSlideOfFinalProject && (
-                        <button
+                        
+                          <button
                           onClick={() => {
                             if (onUnlockRoadmap) onUnlockRoadmap();
                             setTimeout(() => {
@@ -726,8 +727,10 @@ export default function SelectedWork({
                         >
                           <Unlock className="w-3.5 h-3.5" />
                           <span>Unlock & View 03 / Evolution Roadmap ↓</span>
-                        </button>
-                      )}
+                        </button> 
+                        
+                      )} 
+                       */}
                     </div>
                   )}
                 </div>
